@@ -1,0 +1,43 @@
+
+<div class="container">
+  <div class="jumbotron" style="text-align: center;">
+
+
+<select [(ngModel)]="selectedProp" style="margin-right: 10px;height: 30px !important; ">
+  <option>selectionner un critére de filtrage</option>
+   <option *ngFor="let item of employeeProps">
+     {{ item }}
+   </option>
+</select>
+
+  <button (click)="filterOnClick()" style="margin-right: 10px;" mat-button class="btn btn-secondary">Filtrer</button>
+  <button (click)="resetOnClick()"  mat-button class="btn btn-secondary">Réinitialiser</button>
+  </div>
+<div>
+
+<table class="table  table-striped">
+     <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>Cin</th>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Age</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.cin }}</td>
+        <td>{{ employee.nom }}</td>
+        <td>{{ employee.prenom }}</td>
+        <td>{{ employee.age }}</td>
+        <td>{{ employee.email }}</td>
+      </tr>
+    </tbody>
+</table>
+</div>
+
+
+</div>
